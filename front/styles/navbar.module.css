@@ -1,5 +1,45 @@
 .nav {
-  background: red;
-  width: 100%;
-  height: 300px;
+  width: 80%;
+  padding: 20px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+.navTitle {
+  flex: 1;
+  font-size: 2.27rem;
+}
+.navTitle::first-letter {
+  color: #d21b27;
+}
+
+.navLinks {
+  flex: 3;
+  display: flex;
+  align-items: center;
+}
+
+.navLinkItem {
+  margin-right: 50px;
+  letter-spacing: 2px;
+  font-weight: normal;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.navLinkItem:hover {
+  color: #d21b27;
+}
+
+.navButtons {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navCartIcon {
+  margin-right: 20px;
+  cursor: pointer;
 }

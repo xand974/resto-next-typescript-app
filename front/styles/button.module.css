@@ -1,0 +1,13 @@
+.btn {
+  padding: 10px 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btnText {
+  font-size: 0.8rem;
+  color: #f1f1f1;
+  font-weight: lighter;
+}

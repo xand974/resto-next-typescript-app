@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <Navbar />
+      <Hero />
     </div>
   );
 };

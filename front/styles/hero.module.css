@@ -1,0 +1,101 @@
+.heroContainer {
+  display: flex;
+  height: calc(100vh - 101px);
+
+  width: 80%;
+  margin: 20px auto 0 auto;
+}
+
+.heroLeftContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  width: 100%;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.heroButtons {
+  margin: 40px 0;
+  display: flex;
+}
+.heroButtons > div {
+  padding: 15px 60px;
+}
+
+.heroButtons > div:not(:first-child) {
+  margin: 0 20px;
+}
+
+.reviewContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewTitle {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.reviewPicContainer {
+  display: inline-flex;
+}
+
+.reviewPic {
+  border-radius: 50%;
+}
+
+.reviewStar {
+  color: rgb(255, 208, 1);
+}
+
+.heroRightContainer {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroPopUpContainer {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.192);
+  padding: 10px 10px 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
+}
+
+.heroPopUpIconWrapper {
+  position: relative;
+}
+
+.heroPopUpIcon {
+  position: absolute;
+  top: -50%;
+  left: 80%;
+  transform: translateX(-50%);
+}
+
+.heroPopUpAmount {
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.heroPopUpText {
+  font-size: 0.8rem;
+}
+
+.heroPopUpText span {
+  color: red;
+}
