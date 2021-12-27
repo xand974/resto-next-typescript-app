@@ -6,6 +6,8 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import ProductList from "../components/ProductList";
+import Footer from "../components/Footer";
+import Layout from "../components/Layout";
 
 const Home: NextPage = () => {
   return (
@@ -17,9 +19,10 @@ const Home: NextPage = () => {
           content="Web site created by Alexandre Malet"
         />
       </Head>
-      <Navbar />
-      <Hero />
-      <ProductList />
+      <Layout>
+        <Hero />
+        <ProductList />
+      </Layout>
     </div>
   );
 };
