@@ -1,0 +1,101 @@
+.productContainer {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 321px);
+  margin: 20px 0;
+  padding: 20px 0;
+}
+.leftContainer,
+.rightContainer {
+  flex: 1;
+}
+
+.leftContainer {
+  position: relative;
+}
+
+.productImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.productTitle {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.productPrice {
+  margin-bottom: 20px;
+  text-decoration: underline;
+  color: #d21b27;
+  font-size: 1.3rem;
+}
+
+.productDesc {
+  margin-bottom: 20px;
+  color: rgb(53, 53, 53);
+  width: 90%;
+}
+
+.productForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.productFormItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.labelText {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.productInputContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.productInputItem {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.productItemLabel {
+  margin-right: 5px;
+}
+
+.productInput {
+  display: flex;
+  align-items: center;
+}
+
+.productInput input {
+  padding: 5px;
+  font-size: 1.2rem;
+  outline: black;
+}
+
+.productBtn {
+  padding: 10px;
+  margin-left: 10px;
+  background: #d21b27;
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+/* 
+.productInputRadio[type="radio"]:checked ~ .productSizeLabel {
+  color: red;
+} */
