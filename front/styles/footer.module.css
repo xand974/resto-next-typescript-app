@@ -63,3 +63,43 @@
   color: white;
   cursor: pointer;
 }
+@media only screen and (max-width: 768px) {
+  .footer {
+    height: 100%;
+    flex-direction: column;
+  }
+  .footerTitle {
+    font-size: 1.5rem;
+    width: 100%;
+    margin: 30px 0;
+  }
+  .footerLinks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+  .footerLinks p {
+    grid-column: span 3;
+    font-size: 1.1rem;
+    color: gray;
+  }
+  .footerLinks span:nth-of-type(2n) {
+    margin: 0 10px;
+  }
+  .footerLinks span {
+    color: red;
+  }
+
+  .footerForm {
+    width: 100%;
+  }
+  .footerFormForm {
+    width: 100%;
+  }
+  .footerFormTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    color: gray;
+  }
+}

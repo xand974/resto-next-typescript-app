@@ -6,7 +6,9 @@ import Button from "./Button";
 export default function Navbar() {
   return (
     <nav className={style.nav}>
-      <h1 className={style.navTitle}>GF1</h1>
+      <Link href="/">
+        <h1 className={style.navTitle}>GF1</h1>
+      </Link>
       <ul className={style.navLinks}>
         <Link href="/">
           <li className={style.navLinkItem}>Home</li>

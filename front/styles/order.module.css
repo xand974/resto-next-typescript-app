@@ -41,15 +41,54 @@
   height: 30px;
 }
 
-.orderLeftItem {
+.done,
+.inProgress,
+.undone {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-.orderLeftItem span {
+.done span,
+.undone span,
+.inProgress span {
   margin-top: 10px;
 }
+
+.undone {
+  opacity: 0.3;
+}
+
+.inProgress {
+  animation: progress 1s ease infinite alternate;
+}
+.orderLeftChecked {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  bottom: -50%;
+}
+
+.undone .orderLeftChecked,
+.inProgress .orderLeftChecked {
+  display: none;
+}
+
+@keyframes progress {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.inProgress span {
+  margin-top: 10px;
+}
+
 /**order RIGHT CONTAINER**/
 
 .orderRightContainer {

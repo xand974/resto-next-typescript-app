@@ -53,6 +53,8 @@
   color: rgb(255, 208, 1);
 }
 
+/*Right container*/
+
 .heroRightContainer {
   flex: 1;
   height: 100%;
@@ -98,4 +100,31 @@
 
 .heroPopUpText span {
   color: red;
+}
+
+@media only screen and (max-width: 768px) {
+  .heroContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+  .heroTitle {
+    font-size: 3.4rem;
+    text-align: center;
+  }
+  .heroButtons {
+    justify-content: center;
+  }
+  .heroButtons > div:not(:first-child) {
+    margin: 0 0 0 20px;
+  }
+  .reviewContainer {
+    display: none;
+  }
+
+  .heroImg {
+    object-fit: contain;
+  }
+  .heroPopUpContainer {
+    left: 10%;
+  }
 }

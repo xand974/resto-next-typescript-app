@@ -4,6 +4,13 @@ import style from "../../styles/order.module.css";
 import Image from "next/image";
 
 export default function Order() {
+  const status = 0;
+
+  const styleClass = (value: number) => {
+    if (value - status < 1) return style.done;
+    if (value - status === 1) return style.inProgress;
+    if (value - status > 1) return style.undone;
+  };
   return (
     <Layout>
       <div className={style.orderContainer}>
@@ -28,7 +35,7 @@ export default function Order() {
               </tbody>
             </table>
             <div className={style.orderLeftBottom}>
-              <div className={style.orderLeftItem}>
+              <div className={styleClass(0)}>
                 <div className={style.orderLeftImgContainer}>
                   <Image
                     src="/img/paid.png"
@@ -38,8 +45,15 @@ export default function Order() {
                   />
                 </div>
                 <span>Payment</span>
+                <div className={style.orderLeftChecked}>
+                  <Image
+                    src="/img/checked.png"
+                    layout="fill"
+                    className={style.orderLeftCheckedImg}
+                  />
+                </div>
               </div>
-              <div className={style.orderLeftItem}>
+              <div className={styleClass(1)}>
                 <div className={style.orderLeftImgContainer}>
                   <Image
                     src="/img/bake.png"
@@ -49,8 +63,15 @@ export default function Order() {
                   />
                 </div>
                 <span>Preparing</span>
+                <div className={style.orderLeftChecked}>
+                  <Image
+                    src="/img/checked.png"
+                    layout="fill"
+                    className={style.orderLeftCheckedImg}
+                  />
+                </div>
               </div>
-              <div className={style.orderLeftItem}>
+              <div className={styleClass(2)}>
                 <div className={style.orderLeftImgContainer}>
                   <Image
                     src="/img/food-delivery.png"
@@ -60,8 +81,15 @@ export default function Order() {
                   />
                 </div>
                 <span>On the way</span>
+                <div className={style.orderLeftChecked}>
+                  <Image
+                    src="/img/checked.png"
+                    layout="fill"
+                    className={style.orderLeftCheckedImg}
+                  />
+                </div>
               </div>
-              <div className={style.orderLeftItem}>
+              <div className={styleClass(3)}>
                 <div className={style.orderLeftImgContainer}>
                   <Image
                     src="/img/delivered.png"
@@ -71,6 +99,13 @@ export default function Order() {
                   />
                 </div>
                 <span>Delivered</span>
+                <div className={style.orderLeftChecked}>
+                  <Image
+                    src="/img/checked.png"
+                    layout="fill"
+                    className={style.orderLeftCheckedImg}
+                  />
+                </div>
               </div>
             </div>
           </div>

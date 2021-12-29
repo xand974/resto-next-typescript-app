@@ -19,7 +19,7 @@ export default function Footer() {
       </div>
       <div className={style.footerForm}>
         <h2 className={style.footerFormTitle}>
-          Restez à l'affût <br /> de nos dernières offres
+          Restez à l'affût de nos dernières offres
         </h2>
         <form
           className={style.footerFormForm}
