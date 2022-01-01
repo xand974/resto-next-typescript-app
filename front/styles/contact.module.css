@@ -1,0 +1,85 @@
+.contactContainer {
+  width: 80%;
+  margin: auto;
+  height: calc(100vh - 281px);
+  display: flex;
+}
+
+.leftContainer,
+.rightContainer {
+  flex: 1;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/**LEFT CONTAINER**/
+
+.contactTitle {
+  font-size: 3.9rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.contactDesc {
+  color: rgb(53, 53, 53);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.contactTextInfo,
+.contactRowContainer {
+  display: flex;
+  align-items: center;
+}
+
+.contactTextInfo {
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}
+
+.contactTextInfo span {
+  margin-left: 10px;
+}
+
+.contactRowContainer strong:last-child {
+  margin-left: 20px;
+}
+
+/**RIGHT CONTAINER**/
+
+.contactForm,
+.contactFormItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactFormItem label {
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.contactForm input,
+.contactForm textarea {
+  padding: 10px 8px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(53, 53, 53);
+}
+
+.contactForm textarea {
+  resize: none;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.contactForm button {
+  padding: 10px;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
