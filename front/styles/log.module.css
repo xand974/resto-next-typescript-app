@@ -1,0 +1,77 @@
+.logContainer {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logWrapper {
+  width: 370px;
+  height: max-content;
+  background: white;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.089);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.logTitle {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 20px 0;
+  text-decoration: underline #d21b27;
+}
+
+.logInputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.logInputContainer label {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: gray;
+}
+
+.logInputContainer input {
+  padding: 5px 8px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background: none;
+  border-bottom: 1px solid #d21b27;
+}
+
+.logForm button {
+  width: 100%;
+  padding: 6px;
+  background: #d21b27;
+  border: none;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.logLinkContainer {
+  margin-top: 20px;
+}
+
+.logLink,
+.logLinkContainer span {
+  color: gray;
+}
+.logLinkContainer span:nth-of-type(2) {
+  text-decoration: underline black;
+  cursor: pointer;
+  color: #d21b27;
+}
+
+@media only screen and (max-width: 768px) {
+  .logWrapper {
+    width: 90%;
+  }
+}

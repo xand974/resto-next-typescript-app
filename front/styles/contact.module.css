@@ -83,3 +83,19 @@
   border: none;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+  .contactContainer {
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .contactTitle {
+    text-align: center;
+  }
+  .leftContainer,
+  .rightContainer {
+    padding: 0 20px;
+  }
+}

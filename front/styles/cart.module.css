@@ -66,3 +66,18 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+@media only screen and (max-width: 768px) {
+  .cartContainer {
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+  }
+  .cartLeftTable tbody td {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  .cartRightContainer {
+    margin-top: 20px;
+  }
+}

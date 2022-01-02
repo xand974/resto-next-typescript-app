@@ -124,3 +124,21 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+@media only screen and (max-width: 768px) {
+  .orderContainer {
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+  }
+  .orderLeftTable tbody td {
+    padding: 10px 10px 10px 0;
+    font-size: 1rem;
+  }
+  .orderRightContainer {
+    margin-top: 20px;
+  }
+  .orderLeftBottom {
+    margin-top: 20px;
+  }
+}
