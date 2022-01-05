@@ -1,8 +1,9 @@
 import express from "express";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
+import "./lib/db";
 dotenv.config();
 const app = express();
 const PORT = 5000 || process.env.PORT;
