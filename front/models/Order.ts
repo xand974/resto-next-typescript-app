@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import OrderInterface from '../interfaces/order.interface';
+import OrderInterface from "../interfaces/order.interface";
 
 const { Schema } = mongoose;
 
@@ -14,7 +14,8 @@ const orderSchema = new Schema<OrderInterface>(
     status: { type: Number, required: true },
     method: {
       type: Number,
-      required : true
+      required: true,
+    },
   },
   { timestamps: true }
 );
