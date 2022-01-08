@@ -1,10 +1,10 @@
 import style from "../styles/productitem.module.css";
 import Image from "next/image";
 import { ShoppingCartOutlined } from "@mui/icons-material";
-import { DishType } from "../helpers/data";
 import Link from "next/link";
+import ProductInterface from "../interfaces/product.interface";
 type ProductItemType = {
-  item: DishType;
+  item: ProductInterface;
 };
 
 export default function ProductItem({ item }: ProductItemType) {
@@ -13,7 +13,7 @@ export default function ProductItem({ item }: ProductItemType) {
       <div className={style.productItem}>
         <div className={style.productItemImageContainer}>
           <Image
-            src={item.photoURL}
+            src={item.img}
             layout="fill"
             alt="special salad from our store"
             objectFit="cover"
@@ -25,12 +25,12 @@ export default function ProductItem({ item }: ProductItemType) {
         <div className={style.productItemInfoContainer}>
           <p className={style.productItemBigText}>{item.title}</p>
           <p className={style.productItemSmallText}>
-            {item.withVegetable ? "With Vegetable" : "With Meat"}
+            {item.withVegetables ? "With Vegetable" : "With Meat"}
           </p>
         </div>
 
         <div className={style.productItemPriceContainer}>
-          <p className={style.productItemPriceText}>${item.price}</p>
+          <p className={style.productItemPriceText}>${item.prices[0]}</p>
         </div>
       </div>
     </Link>

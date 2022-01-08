@@ -2,8 +2,18 @@ import React from "react";
 import Layout from "../../components/Layout";
 import style from "../../styles/product.module.css";
 import Image from "next/image";
+import { publicRequest } from "../../axios";
+import ProductInterface from "../../interfaces/product.interface";
+
+interface ProductItemInterface {
+  salad: {
+    data: ProductInterface;
+  };
+}
 
 export default function ProductItem() {
+  // console.log(salad);
+
   return (
     <Layout>
       <div className={style.productContainer}>
@@ -112,3 +122,13 @@ export default function ProductItem() {
     </Layout>
   );
 }
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await publicRequest.get(`/products/${params}`);
+
+  return {
+    props: {
+      salad: res.data,
+    },
+  };
+};

@@ -21,8 +21,10 @@ const productSchema = new Schema<ProductInterface>(
         },
       ],
     },
+    withVegetables: { type: Boolean, required: true },
   },
   { timestamps: true }
 );
 
-export default mongoose.model<ProductInterface>("product", productSchema);
+export default mongoose.models.Product ||
+  mongoose.model<ProductInterface>("Product", productSchema);

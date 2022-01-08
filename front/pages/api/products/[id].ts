@@ -17,6 +17,15 @@ export default async function handler(
   } = req;
   dbConnect();
 
+  if (method === "GET") {
+    try {
+      const product = await Product.findById(id);
+      res.status(200).json({ data: product });
+    } catch (error) {
+      res.status(500).json({ data: error });
+    }
+  }
+
   if (method === "PUT") {
     try {
       const product = await Product.findByIdAndUpdate(

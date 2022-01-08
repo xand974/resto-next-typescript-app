@@ -8,8 +8,13 @@ import Hero from "../components/Hero";
 import ProductList from "../components/ProductList";
 import Footer from "../components/Footer";
 import Layout from "../components/Layout";
+import { publicRequest } from "../axios";
 
-const Home: NextPage = () => {
+interface HomeInterface {
+  saladsList: any;
+}
+
+const Home = ({ saladsList }: HomeInterface) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,10 +26,19 @@ const Home: NextPage = () => {
       </Head>
       <Layout>
         <Hero />
-        {/* <ProductList /> */}
+        <ProductList items={saladsList.data} />
       </Layout>
     </div>
   );
+};
+
+export const getServerSideProps = async () => {
+  const res = await publicRequest.get("http://localhost:3000/api/products");
+  return {
+    props: {
+      saladsList: res.data,
+    },
+  };
 };
 
 export default Home;
