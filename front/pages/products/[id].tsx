@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import Layout from "../../components/Layout";
 import style from "../../styles/product.module.css";
 import Image from "next/image";
@@ -6,34 +6,36 @@ import { publicRequest } from "../../axios";
 import ProductInterface from "../../interfaces/product.interface";
 
 interface ProductItemInterface {
-  salad: {
-    data: ProductInterface;
-  };
+  salad: ProductInterface;
 }
 
-export default function ProductItem() {
-  // console.log(salad);
+export default function ProductItem({ salad }: ProductItemInterface) {
+  const [size, setSize] = useState("");
+  const [addOptions, setAddOptions] = useState<string[]>([]);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setAddOptions((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
 
   return (
     <Layout>
       <div className={style.productContainer}>
         <div className={style.leftContainer}>
-          <Image
-            src="/img/salade-tomate.png"
-            layout="fill"
-            className={style.productImg}
-          />
+          <Image src={salad.img} layout="fill" className={style.productImg} />
         </div>
         <div className={style.rightContainer}>
-          <h1 className={style.productTitle}>CAMPAGNOLA</h1>
-          <p className={style.productPrice}>$19.99</p>
-          <p className={style.productDesc}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas
-            itaque incidunt sapiente ratione consequatur molestiae facere amet
-            odit similique quod, dolore facilis qui nostrum eaque laboriosam
-            distinctio dolorem iusto deleniti.
-          </p>
-          <form className={style.productForm}>
+          <h1 className={style.productTitle}>{salad.title}</h1>
+          <p className={style.productPrice}>${salad.prices[0]}</p>
+          <p className={style.productDesc}>{salad.desc}</p>
+          <form
+            className={style.productForm}
+            onSubmit={(e) => e.preventDefault()}
+          >
             <div className={style.productFormItem}>
               <label htmlFor="size" className={style.labelText}>
                 Choose the size
@@ -48,6 +50,7 @@ export default function ProductItem() {
                     name="size"
                     type="radio"
                     value="small"
+                    onChange={(e) => setSize(e.target.value)}
                   />
                 </div>
                 <div className={style.productInputItem}>
@@ -59,6 +62,7 @@ export default function ProductItem() {
                     name="size"
                     type="radio"
                     value="medium"
+                    onChange={(e) => setSize(e.target.value)}
                   />
                 </div>
                 <div className={style.productInputItem}>
@@ -67,6 +71,7 @@ export default function ProductItem() {
                   </label>
                   <input
                     className={style.productInputRadio}
+                    onChange={(e) => setSize(e.target.value)}
                     name="size"
                     type="radio"
                     value="large"
@@ -84,25 +89,45 @@ export default function ProductItem() {
                   <label htmlFor="peperoni" className={style.productItemLabel}>
                     Peperoni
                   </label>
-                  <input type="checkbox" value="peperoni" id="peperoni" />
+                  <input
+                    type="checkbox"
+                    value="peperoni"
+                    id="peperoni"
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className={style.productInputItem}>
                   <label htmlFor="cheesy" className={style.productItemLabel}>
                     Extra Cheese
                   </label>
-                  <input type="checkbox" value="cheesy" id="cheesy" />
+                  <input
+                    type="checkbox"
+                    value="cheesy"
+                    id="cheesy"
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className={style.productInputItem}>
                   <label htmlFor="spicy" className={style.productItemLabel}>
                     Spicy Sauce
                   </label>
-                  <input type="checkbox" value="spicy" id="spicy" />
+                  <input
+                    type="checkbox"
+                    value="spicy"
+                    id="spicy"
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className={style.productInputItem}>
                   <label htmlFor="garlic" className={style.productItemLabel}>
                     Garlic Sauce
                   </label>
-                  <input type="checkbox" value="garlic" id="garlic" />
+                  <input
+                    type="checkbox"
+                    value="garlic"
+                    id="garlic"
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
             </div>
@@ -124,11 +149,11 @@ export default function ProductItem() {
 }
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await publicRequest.get(`/products/${params}`);
+  const res = await publicRequest.get(`/products/${params.id}`);
 
   return {
     props: {
-      salad: res.data,
+      salad: res.data.data,
     },
   };
 };
