@@ -94,6 +94,7 @@
   border: none;
   color: white;
   border-radius: 8px;
+  cursor: pointer;
 }
 /* 
 .productInputRadio[type="radio"]:checked ~ .productSizeLabel {

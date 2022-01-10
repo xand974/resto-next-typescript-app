@@ -4,8 +4,7 @@ export default interface ProductInterface {
   desc: string;
   img: string;
   prices: [number];
-  extraOptions: {
-    type: [{ text: string; price: number }];
-  };
+  extraOptions: [{ text: string; price: number }];
+
   withVegetables: boolean;
 }
